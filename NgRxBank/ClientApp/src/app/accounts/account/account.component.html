@@ -1,0 +1,14 @@
+<div *ngIf="account">
+  <h1 id="tableLabel">User Account</h1>
+
+  <p>
+    <input type="number" [formControl]="depositAmount" />
+    <button (click)="onDeposit()" data-test="deposit-button">Deposit</button>
+  </p>
+  <p>
+    <input type="number" [formControl]="withdrawAmount" />
+    <button (click)="onWithdraw()">Withdraw</button>
+  </p>
+  <p>Balance: {{ account.balance }}</p>
+  <p><button (click)="onDelete()" data-test="remove-button">Delete</button></p>
+</div>

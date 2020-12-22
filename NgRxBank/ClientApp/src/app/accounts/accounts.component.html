@@ -1,0 +1,19 @@
+<h1 id="tableLabel">User Accounts</h1>
+
+<p *ngIf="!(accounts$ | async)"><em>Loading...</em></p>
+<p *ngIf="accounts$ | async">
+  <button (click)="onAdd()" data-test="create-button">
+    Create Account
+  </button>
+</p>
+<p class="validation">{{accountError | async}}</p>
+<table
+  class="table table-striped"
+  aria-labelledby="tableLabel"
+  *ngIf="accounts$ | async"
+>
+  <app-accounts-table
+    *ngIf="accounts$ | async"
+    [accounts]="accounts$ | async"
+  ></app-accounts-table>
+</table>
